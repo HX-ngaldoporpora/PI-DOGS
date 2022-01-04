@@ -4,7 +4,7 @@ const {YOUR_API_KEY} = process.env;
 //const {Router} = require ("express");
 //const router = Router();
 
-/*const getApiInfo = async () => {
+const getApiInfo = async () => {
     const apiUrl = await axios(`https://api.thedogapi.com/v1/breeds?api_key=${YOUR_API_KEY}`)
     const apiInfo = await apiUrl.data.map(el => {
         return {
@@ -21,15 +21,14 @@ const {YOUR_API_KEY} = process.env;
     });
   //  console.log(apiInfo)
     return apiInfo
-};*/
+};
+/*
 const getApiInfo = () => {
 
-    let url = `https://api.thedogapi.com/v1/breeds?api_key=${YOUR_API_KEY}`
-    let apiInfo = "hola"
-
-    axios.get(url)
+    const apiInfo = axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${YOUR_API_KEY}`)
+    console.log("soy info" + apiInfo)
        .then(response => {
-           return apiInfo = response.data.map(el => {
+              response.data.map(el => {
                  return{
                      name: el.name,
                      id: el.id,
@@ -47,7 +46,7 @@ const getApiInfo = () => {
     console.log(error)
 });
   return apiInfo
-}
+}*/
 
 
 const getDbInfo = async () => {
