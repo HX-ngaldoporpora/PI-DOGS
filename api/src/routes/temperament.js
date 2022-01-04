@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
         res.send(dogTemperament)
     }
     catch(error){
-        console.log(error)
+        res.status(404).send("Error: Invalid Temperament")
     }
 });
 

@@ -22,7 +22,7 @@ const getApiInfo = async () => {
   //  console.log(apiInfo)
     return apiInfo
 };
-/*
+/*  NO FUNCIONA CON PROMISES, FALLA EL MAP
 const getApiInfo = () => {
 
     const apiInfo = axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${YOUR_API_KEY}`)
