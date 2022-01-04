@@ -1,9 +1,11 @@
 import React from 'react'
+import Nav from './Nav'
 
 function CreateDog() {
     return (
         <div>
-            <h1>SOy Create dog</h1>
+           <Nav/>
+            <h1>Create dog</h1>
         </div>
     )
 }

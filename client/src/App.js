@@ -7,12 +7,14 @@ import CreateDog from './Components/CreateDog';
 import About from './Components/About'
 import Favorites from './Components/Favorites';
 
+
+
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
      <Switch>
-     <Route exact path = "/" component = {LandingPage}/>
+       <Route exact path = "/" component = {LandingPage}/>
        <Route exact path = '/dogs' component = {Home}/>
        <Route path = '/dogs/create' component={CreateDog}/>
        <Route path = '/dogs/:id' component={Detail}/>
