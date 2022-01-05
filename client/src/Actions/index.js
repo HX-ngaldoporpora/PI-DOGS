@@ -10,6 +10,8 @@ export const ORDER_BY_WEIGHT = "ORDER_BY_WEIGHT"
 export const GET_DETAIL = "GET_DETAIL"
 export const POST_DOG = "POST_DOG"
 export const CLEAR_DETAIL = "CLEAR_DETAIL"
+export const ADD_FAVORITE = "ADD_FAVORITE"
+export const REMOVE_FAVORITE = "REMOVE_FAVORITE"
 
 export function getAllDogs () {
     return async function (dispatch){
@@ -114,3 +116,16 @@ export function postDog (payload) {
         } 
  } 
 
+ export function addFavorite (payload){
+  return {
+      type: ADD_FAVORITE,
+      payload
+  }  
+ }
+
+ export function removeFavorite(payload){
+     return {
+         type: REMOVE_FAVORITE,
+         payload
+     }
+ }

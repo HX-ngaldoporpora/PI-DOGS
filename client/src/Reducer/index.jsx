@@ -1,10 +1,11 @@
-import {GET_ALL_DOGS, GET_NAME_DOG, GET_TEMPERAMENT, FILTER_BY_TEMPERAMENTS, FILTER_CREATED, ORDER_BY_NAME, ORDER_BY_WEIGHT, GET_DETAIL, POST_DOG, CLEAR_DETAIL} from "../Actions"
+import {GET_ALL_DOGS, GET_NAME_DOG, GET_TEMPERAMENT, FILTER_BY_TEMPERAMENTS, FILTER_CREATED, ORDER_BY_NAME, ORDER_BY_WEIGHT, GET_DETAIL, POST_DOG, CLEAR_DETAIL, ADD_FAVORITE, REMOVE_FAVORITE } from "../Actions"
 
 const initialState = {
     dogs: [],
     filterDogs: [],
     temperaments: [],
-    detail: []
+    detail: [],
+    favorites: []
 }
 
 function rootReducer(state = initialState, action) {
@@ -110,6 +111,17 @@ function rootReducer(state = initialState, action) {
                     return {
                         ...state
                     }
+
+            case ADD_FAVORITE:
+                return{
+                    ...state,
+                    favorites : state.favorites.concat(action.payload)
+                }
+            case REMOVE_FAVORITE:
+                return{
+                    ...state,
+                    favorites: state.favorites.filter(el => el.id !== action.payload)
+                }
             default:
                     return state;  
 

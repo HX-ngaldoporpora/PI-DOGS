@@ -2,10 +2,13 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {getAllDogs, getTemperaments, filterByTemperaments, filterCreated, orderByName, orderByWeight} from '../Actions';
-import Card from './Card'
-import Nav from './Nav'
-import Pagination from './Pagination';
+import {getAllDogs, getTemperaments, filterByTemperaments, filterCreated, orderByName, orderByWeight} from '../../Actions';
+import Card from '../Card'
+import Nav from '../Nav'
+import Pagination from '../Pagination';
+import SearchBar from '../../Components/SearchBar';
+import FavoritesActions from '../FavoritesActions';
+
 
 function Home() {
 
@@ -73,9 +76,10 @@ useEffect (() => {
 
     return (
         <div>
-            <h1>Estoy en HOME</h1>
+            <SearchBar/>
             <Nav/>
-            <Link to= '/dogs/create'> CREATE </Link>
+      
+            <button  onClick = {e=>{handleClick(e)}}> REFRESH </button>
             <div>     
         <select onClick = {(e) =>  handleSortWeight(e)}>
             <option value = "asc"> Peso ascendente </option>
@@ -108,7 +112,7 @@ useEffect (() => {
         <div> 
         {currentDog?.map(el=> {
             return(
-                <>
+                <div>
                  <Link to ={`/dogs/${el.id}`}>
                      <Card
                      name = {el.name}
@@ -116,7 +120,12 @@ useEffect (() => {
                      key = {el.id}
                      />
                  </Link>
-                </>
+                 <FavoritesActions 
+                    id = {el.id}
+                    name = {el.name}
+                    image = {el.image}
+                />
+                </div>
             )
         })
         }
@@ -130,6 +139,7 @@ useEffect (() => {
         </div>
         </div>
     )
+        
 }
 
 export default Home
