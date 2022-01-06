@@ -10,6 +10,8 @@ import SearchBar from '../../Components/SearchBar';
 import FavoritesActions from '../FavoritesActions';
 
 
+
+
 function Home() {
 
 const dispatch = useDispatch()
@@ -121,10 +123,11 @@ useEffect (() => {
                      />
                  </Link>
                  <FavoritesActions 
-                    id = {el.id}
-                    name = {el.name}
-                    image = {el.image}
-                />
+                  id = {el.id}
+                 name = {el.name}
+                 image = {el.image}
+                 />
+   
                 </div>
             )
         })
