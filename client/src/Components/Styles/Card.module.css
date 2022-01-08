@@ -1,0 +1,44 @@
+@import url('//db.onlinewebfonts.com/c/1a9e06429c308314c75092b63b2c18f4?family=Biko');
+.card{
+    background: rgb(53, 53, 52);
+    width:320px;
+    height: 200px;
+    float: left;
+    margin: 20px 20px 5px 20px;
+     box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.3);
+    position: relative;
+    display: inline-block;
+    text-align: center;
+} 
+.card:hover{
+transform: scale(1.10);
+}
+.title{
+font-family: "Biko";    
+text-decoration: 'none';
+color:#fcf7f7;
+font-size: 25px;
+position: absolute;
+text-align: center;
+    bottom: 5px;
+    left: 10%;
+}
+.title:hover{
+color:rgb(56, 56, 56)
+}
+
+.img{
+padding: 0px;
+padding-top: 10px;
+height: 180px;
+width: 300px;
+}
+
+.favorite{
+    position: absolute;
+    padding-bottom: 50px;
+    
+  
+}

@@ -89,36 +89,25 @@
 .error{
     font-family: "Montserrat";
     font-size: 18px;
-    color: rgb(250, 23, 23)
+    color: rgb(250, 182, 182)
 }
 
 
 
 .insideinput {
-    font-size: 22px;
+    font-size: 18px;
     font-family: "Montserrat";
     justify-content: center;
-    border: #272626 1px solid;
+    border: transparent;
     outline: none;
     color: white;
-    font-weight: bold;
     width: 200px;
     margin-top: 5px;
     border-radius: 3px;
     padding-bottom: 3px;
     padding-top: 3px;
-    background-color: transparent;
+    background-color: #9c9c9cd2;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,44 +1,49 @@
-import React,  {useEffect, useState} from 'react'
-import {addFavorite, removeFavorite} from '../Actions'
-import {useDispatch, useSelector} from 'react-redux'
-import {useHistory} from "react-router-dom";
+import React  from 'react'
+import {addFavorite} from '../Actions'
+import {useDispatch} from 'react-redux'
+
+import Like from './Img/like.png'
 
 
 function FavoritesActions({id, name, image}) {
-  const  dispatch = useDispatch()
-const history = useHistory()
-/*const myFavorites = useSelector ((state) => state.favorites)
-const [fav, setFav] = useState({
-    favorites: []
-})*/
+const  dispatch = useDispatch()
+
 
  function handleClick () {
     dispatch(addFavorite({id, name, image}));
     alert("Add to favorites");
-    //history.push("/favorites")
+  
 }
-
-function handleDelete (id){
-    dispatch(removeFavorite(id))
-
-  /*  setFav({
-        ...fav,
-        favorites: fav.favorites.filter(el => el !==e)
-    })
-    alert("Remove from favorites")*/
-}
-
-useEffect(() => {
-    dispatch (removeFavorite(id))
-    },[dispatch])
-
-
     return (
         <div>
-        <button onClick ={() => handleClick()}> ADD FAVORITES</button>
-        <button onClick = {() => handleDelete(id)}> REMOVE FAVORITE </button> 
+        <button onClick ={() => handleClick()}> <img src={Like}alt= "Fav" height='30px' weight="30px"/> </button>
         </div>
     )
 }
 
 export default FavoritesActions
+
+
+
+///////////////////////////////////////////////////////
+
+/*
+/*const myFavorites = useSelector ((state) => state.favorites)
+const [fav, setFav] = useState({
+    favorites: []
+})
+function handleDelete (e){
+    dispatch(removeFavorite(e))
+    alert("Remove from favorites")
+    setFav({
+        ...fav,
+        favorites: fav.favorites.filter(el => el !==e)
+    })
+    alert("Remove from favorites")
+}
+
+useEffect(() => {
+    dispatch (removeFavorite(id))
+    },[dispatch])*/
+
+

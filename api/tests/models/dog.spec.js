@@ -1,4 +1,4 @@
-const { Dog, conn } = require('../../src/db.js');
+const { Dog, Temperament, conn } = require('../../src/db.js');
 const { expect } = require('chai');
 
 describe('Dog model', () => {
@@ -7,7 +7,7 @@ describe('Dog model', () => {
       console.error('Unable to connect to the database:', err);
     }));
   describe('Validators', () => {
-    beforeEach(() => Dog.sync({ force: true }));
+    beforeEach(() => Dog.sync({ force: false }));
     describe('name', () => {
       it('should throw an error if name is null', (done) => {
         Dog.create({})
@@ -20,3 +20,18 @@ describe('Dog model', () => {
     });
   });
 });
+
+describe('Temperament model', function () {
+  beforeEach(async function() {
+    await Temperament.sync({ force: false });
+  });
+  it('Should throw an error if name is null', (done) => {
+    Temperament.create({id: "555"})
+      .then(() => done(new Error('It requires a valid name')))
+      .catch(() => done());
+  });
+  it('Name should be a STRING', function(){
+    expect(typeof Temperament.name).equal("string")
+  })
+
+  });

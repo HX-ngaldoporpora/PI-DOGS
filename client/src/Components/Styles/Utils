@@ -1,0 +1,12 @@
+Letras
+@import url('//db.onlinewebfonts.com/c/1a9e06429c308314c75092b63b2c18f4?family=Biko');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+
+
+
+Paleta de colores
+background-color: #272626;  
+color-text: rgba(230, 227, 227, 0.726);
+background-color inside inputs: #9c9c9cd2

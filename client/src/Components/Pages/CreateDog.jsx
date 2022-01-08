@@ -3,6 +3,8 @@ import Nav from '../Nav'
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from "react-router-dom";
 import {postDog, getTemperaments} from '../../Actions';
+import {Link} from 'react-router-dom'
+import s from '../Styles/CreateDog.module.css'
 
 function validate (input) {
     let errors = {};
@@ -58,11 +60,16 @@ function CreateDog() {
 });
 
 function handleSelect(e) {
-    setInput({
-        ...input,
-        temperament:[...input.temperament, e.target.value]
-    })
+    if (input.temperament.includes(e.target.value)) {
+        alert("Already in the list");  
+    } else { 
+        setInput({
+            ...input,
+            temperament:[...input.temperament, e.target.value]
+        })
+    }      
 }
+
 const handleDelete = (e) => {
     setInput({
      ...input,
@@ -103,113 +110,127 @@ useEffect (() => {
 
     return (
         <div>
-           <Nav/>
-            <h1> CREATE YOUR OWN DOG'S BREED </h1>
-
-        <form onSubmit={e => {handleSubmit(e)}}>
+               
+         
+         <div className = {s.masgeneral}>
+         <Nav/>
+         <h1 className={s.title}> CREATE YOUR OWN DOG'S BREED </h1>
         
-        <div>
-        <label>Name</label>
+        <div className={s.general}>
+ 
+         <form className={s.form} onSubmit={e => {handleSubmit(e)}}>
+     
+       <div className={s.box}>
+        
+        
+        <div >
+
+        <label className={s.subtitle}>Name</label>
             <input
             type= "text"
             value= {input.name}
             name="name" 
             onChange = {(e) => handleChange(e)}/>
-            {errors.name && (<p>{errors.name}</p>)} 
+            {errors.name && (<p className={s.error}>{errors.name}</p>)} 
         </div>
         
         <div>
-        <label>Life Span   </label>
+        <label className={s.subtitle}>Life Span </label>
         <input
              type= "number"
              value= {input.life_span}
              name="life_span" 
              onChange = {(e) => handleChange(e)}/>
-             <label> years </label>
-             {errors.life_span && (<p>{errors.life_span}</p>)} 
+             <label className={s.subtitend}> years </label>
+             {errors.life_span && (<p className={s.error}>{errors.life_span}</p>)} 
         </div>
        
-
         <div>
-        <label>Picture   </label>
-         <input
-           type= "url"
-           value= {input.image}
-           name="image" 
-           onChange = {(e) => handleChange(e)}/>
-        {errors.image && (<p >{errors.image}</p>)} 
-        </div> 
-
-        <div>
-        <label>Min weight   </label>
+        <label className={s.subtitle} >Min weight   </label>
             <input
             type= "number"
             min="1"
             value= {input.minweight}
             name="min_weight" 
             onChange = {(e) => handleChange(e)}/>
-            <label> kgs </label>
-         {errors.min_weight && (<p>{errors.min_weight}</p>)}
+            <label className={s.subtitend}> kgs </label>
+         {errors.min_weight && (<p className={s.error}>{errors.min_weight}</p>)}
         </div>     
 
         <div>
-        <label>Max weight   </label>
+        <label className={s.subtitle} >Max weight   </label>
             <input
             type= "number"
             max="100"
             value= {input.max_weight}
             name="max_weight" 
             onChange = {(e) => handleChange(e)}/>
-            <label> kgs </label>
-         {errors.max_weight && (<p>{errors.max_weight}</p>)} 
+            <label className={s.subtitend}> kgs </label>
+         {errors.max_weight && (<p className={s.error}>{errors.max_weight}</p>)} 
         </div>     
         
         <div>
-        <label>Min height   </label>
+        <label className={s.subtitle}>Min height   </label>
          <input
          type= "number"
          min="10"
          value= {input.min_height}
          name="min_height" 
          onChange = {(e) => handleChange(e)}/>
-         <label> cms </label>
-        {errors.min_height && (<p>{errors.min_height}</p>)} 
+         <label className={s.subtitend}> cms </label>
+        {errors.min_height && (<p className={s.error}>{errors.min_height}</p>)} 
         </div>     
     
      <div>
-     <label>Max height   </label>
+     <label className={s.subtitle}>Max height   </label>
          <input
+         className={s.insideinput}
          type= "number"
          max="80"
          value= {input.max_height}
          name="max_height" 
          onChange = {(e) => handleChange(e)}/>
-         <label> cms </label>
-          {errors.max_height && (<p>{errors.max_height}</p>)} 
+         <label className={s.subtitend}> cms </label>
+          {errors.max_height && (<p className={s.error}>{errors.max_height}</p>)} 
      </div>     
-    
+
      <div>
-        <label> Temperaments   </label> 
+    <label className={s.subtitle} >Picture   </label>
+     <input
+       type= "url"
+       value= {input.image}
+       name="image" 
+       onChange = {(e) => handleChange(e)}/>
+    {errors.image && (<p className={s.error}>{errors.image}
+</p>)} 
+    </div> 
+
+     <div>
+        <label className={s.subtitle}> Temperaments   </label> 
         <select value= {input.temperament} onChange = {(e)=> handleSelect(e)}>
          {temperaments.map((el) => (<option value={el.name}> {el.name} </option>))}
         <ul> <li> {input.temperament.map(el => el + ", ")} </li></ul>
-        {errors.temperament && (<p>{errors.temperament}</p>)}
+        {errors.temperament && (<p className={s.error}>{errors.temperament}</p>)}
         </select>
     </div>
-
-    <button  disabled={Object.keys(errors).length > 0 || input.temperament.length === 0 ? true : false} type ='submit'> 
-    CREATE
-    </button>          
- 
-          </form>
-
+    </div>
+        <div className={s.botones}>
+    <button className={s.btn} disabled={Object.keys(errors).length > 0 || input.temperament.length === 0 ? true : false} type ='submit'> CREATE </button>          
+        
+          <Link to="/dogs">
+        <button className={s.btn}>BACK</button>
+        </Link>
+        </div>
+        </form>
        <div >
         <ul >
-       {input.temperament.map(el=>  <li > {el} <button onClick={() => handleDelete(el)}> X </button></li> )}
+       {input.temperament.map(el=>  <li > {el} <button onClick={() => handleDelete(el)}> <img src="https://img.icons8.com/material-outlined/24/ffffff/delete-sign.png" height= "15px" weight= "15px"alt="delete"/> </button></li> )}
        </ul>
          </div>
+         </div>
         </div>
-              
+        </div>
+      
     )
 }
 

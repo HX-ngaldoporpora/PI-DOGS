@@ -1,4 +1,5 @@
 import React from 'react'
+import s from './Styles/Pagination.module.css'
 
 function Pagination({dogsPerPage, allDogs, paginado }) {
     const pageNumbers = []
@@ -9,7 +10,7 @@ function Pagination({dogsPerPage, allDogs, paginado }) {
 
     return (
         <nav>
-            <ul>
+            <ul className={s.pagination}>
                 {pageNumbers?.map(number => (
                     <li key={number}>
                         <a onClick = {() => paginado(number)}>

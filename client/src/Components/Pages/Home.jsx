@@ -7,7 +7,8 @@ import Card from '../Card'
 import Nav from '../Nav'
 import Pagination from '../Pagination';
 import SearchBar from '../../Components/SearchBar';
-import FavoritesActions from '../FavoritesActions';
+import Reload from '../Img/reload.png'
+import s from '../Styles/Home.module.css'
 
 
 
@@ -77,11 +78,13 @@ useEffect (() => {
 }, [dispatch])
 
     return (
-        <div>
+        <div className={s.gral}>
+            <div className={s.head}> 
             <SearchBar/>
             <Nav/>
-      
-            <button  onClick = {e=>{handleClick(e)}}> REFRESH </button>
+             <button className={s.btn}  onClick = {e=>{handleClick(e)}}> <img src={Reload}  weight="40px" height="40px" alt= "Refresh"/> </button>
+            </div>
+            <div className={s.filters}>
             <div>     
         <select onClick = {(e) =>  handleSortWeight(e)}>
             <option value = "asc"> Peso ascendente </option>
@@ -111,29 +114,25 @@ useEffect (() => {
                     ))}
         </select>   
         </div>
-        <div> 
+        </div>
+        <div className={s.divcard} > 
         {currentDog?.map(el=> {
             return(
-                <div>
-                 <Link to ={`/dogs/${el.id}`}>
-                     <Card
-                     name = {el.name}
-                     image = {el.image}
-                     key = {el.id}
-                     />
+                <div >
+                 <Link to ={`/dogs/${el.id}`}>              <h2 >{el.name.toUpperCase()}</h2>
                  </Link>
-                 <FavoritesActions 
-                  id = {el.id}
-                 name = {el.name}
-                 image = {el.image}
-                 />
-   
-                </div>
+                   <Card
+                   name = {el.name}
+                   image = {el.image}
+                   key = {el.id}
+                   id = {el.id}
+                   />
+                   </div>
             )
         })
         }
        </div> 
-       <div>
+       <div className={s.paginado}>
         <Pagination
         dogsPerPage={dogsPerPage}
         allDogs={allDogs.length}

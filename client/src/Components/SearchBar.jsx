@@ -34,7 +34,7 @@ function handleSubmit(e){
                 onChange = {(e) => handleInputChange(e)}/>
                 
                 <button type = 'submit'
-                onClick = {(e) => handleSubmit(e)}>Search</button>
+                onClick = {(e) => handleSubmit(e)}> <img src= "https://img.icons8.com/material-outlined/24/ffffff/search--v1.png" alt="buscar"/> </button>
             </div>
          
      
