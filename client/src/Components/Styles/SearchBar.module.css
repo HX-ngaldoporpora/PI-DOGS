@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+.searchinput{
+font-size: 18px;
+font-family: "Montserrat";
+border: #999999 1px solid;
+outline: none;
+color: white;
+font-weight: bold;
+width: 170px;
+margin-top: 5px;
+border-radius: 3px;
+padding-bottom: 3px;
+padding-top: 3px;
+background-color: transparent;
+padding-right: 20px;
+}
+
+.btn{
+    background-color:#272626 ;
+    border: none;
+}
+.btn:hover{
+    border: palegoldenrod 1px;
+    transform: scale(1.10);
+    cursor: pointer;
+}

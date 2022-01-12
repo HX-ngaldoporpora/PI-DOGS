@@ -1,19 +1,25 @@
-@import url('//db.onlinewebfonts.com/c/1a9e06429c308314c75092b63b2c18f4?family=Biko');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 .nav{
     position: top;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
     justify-content: space-around;
     background-color: #272626;
-    padding: 10px
+    width:100%;
+    padding-bottom: 20px;
 }
 
-.about {
-    color:rgba(230, 227, 227, 0.726);
-    font-family: "Montserrat";
+.btn{
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    color: rgba(230, 227, 227, 0.726);
     font-size: 18px;
-    font-weight: 700;
-    text-decoration: none;
+    border-color: transparent;
+    cursor: pointer;
+    top: 10px;
+    justify-content: center;
+    justify-items: center;
 }

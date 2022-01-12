@@ -1,0 +1,16 @@
+@import url('//db.onlinewebfonts.com/c/1a9e06429c308314c75092b63b2c18f4?family=Biko');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+.gral{
+    width: 100%;
+    height: 800px;
+    background-color: #272626;
+    color: rgb(189, 186, 186);
+    font-family: "Montserrat";
+}
+
+.fav{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}

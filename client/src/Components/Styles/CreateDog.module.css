@@ -22,8 +22,8 @@
 .box {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-radius: 25px;
-    background-color: rgba(0, 0, 0, 0.774);
+    border-radius: 5px;
+    background-color: rgb(53, 53, 52);
     width: 900px;
     height: 550px;
     margin-top: 20px;
@@ -33,20 +33,20 @@
 .btn {
     width: 100px;
     height: 100px;
-    background-color: rgba(0, 0, 0, 0.80);
-    color: rgba(255, 255, 255, 0.726);
-    font-size: 20px;
+    background-color: transparent;
+    color: rgba(230, 227, 227, 0.726);
+    font-size: 18px;
     border-color: transparent;
     cursor: pointer;
-    border-radius: 50px;
     margin-top: 40px;
     margin-left: 40px;
     margin-right: 40px;
 }
 
 .btn:hover {
-    color: #ffffff;
-    background-color: black;
+   transform: scale(1.20);
+    background-color: #161616;
+    border-radius: 5px;
 }
 
 .botones{
@@ -55,12 +55,8 @@
   }
 
 
-.nav{
-    background-color: #272626; 
-}
-
 .title{
-    font-family: "Biko";
+    font-family: "Montserrat";
     font-size: 30px;
     background-color: #272626; 
     color: rgba(230, 227, 227, 0.726);
@@ -92,8 +88,6 @@
     color: rgb(250, 23, 23)
 }
 
-
-
 .insideinput {
     font-size: 22px;
     font-family: "Montserrat";
@@ -110,9 +104,59 @@
     background-color: transparent;
 }
 
+.remove{
+    display: inline;
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: rgba(230, 227, 227, 0.726);
+    padding-left: 10px;
+}
+.btnremove{
+    background-color: transparent;
+    border: #272626 1px solid;
+    border-radius: 5px;
+}
+.btnremove:hover{
+    transform: scale(1.20);
+  background-color: #161616;
+  border-radius: 5px;
+}
+.boxremove{
+    border: rgb(128, 128, 128) 1px solid;
+    border-radius: 8px;
+    width: 890px;
+    display: flex;
+    position: relative;
+    margin-left: 210px;
+    font-family: "Montserrat";
+    font-weight: 900;
+    font-size: 20px;
+    padding: 5px;
+    color: rgba(255, 250, 250, 0.726);
+}
+s.fotocarnet{
+    padding: 5px;
+    margin:5px;
+    border-style: 1px black;
+    display: inline;
+}
 
-
-
+.selectinside{
+    font-size: 18px;
+    font-family: "Montserrat";
+    border: #999999 1px solid;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    width: 200px;
+    margin-top: 5px;
+    border-radius: 3px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    background-color: rgb(53, 53, 52);
+    padding-right: 20px;
+    
+}
 
 
 

@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import Home from './Img/home1.png'
 import Like from './Img/like.png'
 import Create from './Img/create.png'
+import About from './Img/dog.png'
 import s from './Styles/Nav.module.css'
 
 
@@ -10,10 +11,10 @@ function Nav() {
 
     return (
         <div className={s.nav}>
-            <Link to= '/dogs'> <img src= {Home} weight="40px" height="40px" alt="Home"/> </Link>
-            <Link to = '/dogs/create'> <img src={Create} weight="40px" height="40px" alt= "CREATE"/></Link>
-            <Link to= '/favorites'> <img src={Like}  weight="40px" height="40px" alt="Favorites"/> </Link>
-            <Link to= '/about'> <p className={s.about}>about</p> </Link>
+            <Link to= '/dogs'> <button className={s.btn}> <p><img src= {Home} weight="40px" height="40px" alt="Home"/> HOME </p> </button></Link>
+            <Link to = '/dogs/create'> <button className={s.btn}> <p> <img src={Create} weight="40px" height="40px" alt= "CREATE"/> CREATE </p> </button></Link>
+            <Link to= '/favorites'> <button className={s.btn}> <p><img src={Like}  weight="40px" height="40px" alt="Favorites"/> FAVORITES </p></button></Link>
+            <Link to= '/about'> <button className={s.btn}><p> <img src={About} weight="40px" height="40px" alt= "ABOUT"/>  ABOUT</p></button> </Link>
           
         </div>
     )

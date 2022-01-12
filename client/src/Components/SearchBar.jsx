@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux';
 import {getNameDog} from '../Actions';
+import s from './Styles/SearchBar.module.css'
+import Lupa from './Img/lupa.png'
 
 function SearchBar() {
 
@@ -27,15 +29,18 @@ function handleSubmit(e){
       
             <div>
                 <input
+                className={s.searchinput}
                 type = "text"
-                placeholder='Search by breed...'
+                placeholder='Search...'
                 value={name}
                 autoComplete='off'
-                onChange = {(e) => handleInputChange(e)}/>
+                onKeyPress={e => e.key === 'Enter' && handleSubmit(e)}
+                onChange = {(e) => handleInputChange(e)}
+                />
                 
-                <button type = 'submit'
-                onClick = {(e) => handleSubmit(e)}> <img src= "https://img.icons8.com/material-outlined/24/ffffff/search--v1.png" alt="buscar"/> </button>
-            </div>
+                <button type = 'submit' className={s.btn}
+                onClick = {(e) => handleSubmit(e)}> <img src={Lupa} alt="buscar" weight="40px" height="40px"/> </button>
+                </div>
          
      
      

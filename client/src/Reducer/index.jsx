@@ -14,7 +14,7 @@ function rootReducer(state = initialState, action) {
                 return {
                     ...state,
                     dogs: action.payload,
-                  filterDogs: action.payload
+                   filterDogs: action.payload
                 }
             case GET_NAME_DOG:
                 return {
@@ -36,16 +36,26 @@ function rootReducer(state = initialState, action) {
                     ...state,
                     detail : []
                 }
-            case ORDER_BY_NAME:
+
+                case ORDER_BY_NAME:
                 let orderName = action.payload === "az" ? state.dogs.sort(function (a, b) {
-                    if (a.name > b.name) return 1;
-                    if (b.name > a.name) return -1;
+                    if (a.name > b.name) {
+                        return 1;
+                    }
+                    if (b.name > a.name) {
+                        return -1;
+                    }
                     return 0
+                    //return a.name - b.name
                     
                 }) : 
                 state.dogs.sort (function (a, b) {
-                    if (a.name > b.name) return -1;
-                    if (b.name > a.name) return 1                   
+                    if (a.name > b.name) {
+                        return -1;
+                    }
+                    if (b.name > a.name) {
+                        return 1
+                    }
                     return 0;
                 }) 
                 return {
@@ -53,15 +63,22 @@ function rootReducer(state = initialState, action) {
                     dogs : orderName
                 }
             case ORDER_BY_WEIGHT:
-                let orderWeight = action.payload === "asc" ? 
-                state.dogs.sort (function (a, b) {
-                    if (a.min_weight > b.min_weight) return 1;
-                    if (b.min_weight > a.min_weight) return -1;
-                    return 0;
+                let orderWeight = action.payload === "asc" ? state.dogs.sort (function (a, b) {
+                    if (a.min_weight > b.min_weight) {
+                        return 1;
+                    }
+                    if (b.min_weight > a.min_weight) {
+                        return -1;
+                    }
+                    return a.min_weight - b.min_weight;
                 }) : 
                 state.dogs.sort (function (a, b) {
-                    if (a.min_weight > b.min_weight) return -1;
-                    if (b.min_weight> a.min_weight)  return 1
+                    if (a.min_weight > b.min_weight) {
+                        return -1;
+                    }
+                    if (b.min_weight> a.min_weight) {
+                        return 1
+                    }
                     return 0;
                 }) 
                            return {

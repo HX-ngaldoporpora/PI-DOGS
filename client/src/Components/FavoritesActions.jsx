@@ -1,7 +1,7 @@
 import React  from 'react'
 import {addFavorite} from '../Actions'
 import {useDispatch} from 'react-redux'
-
+import s from './Styles/FavoriteAction.module.css'
 import Like from './Img/like.png'
 
 
@@ -16,7 +16,7 @@ const  dispatch = useDispatch()
 }
     return (
         <div>
-        <button onClick ={() => handleClick()}> <img src={Like}alt= "Fav" height='30px' weight="30px"/> </button>
+        <button className={s.btn} onClick ={() => handleClick()}> <img src={Like}alt= "Fav" height='30px' weight="30px"/> </button>
         </div>
     )
 }

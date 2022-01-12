@@ -17,28 +17,31 @@
     font-size: 20px;
     color: #8e8e8f
   }
-  
-  ul.pagination li:active{
-    color: rgb(252, 108, 41)
-  }
-  
-  ul.pagination li :hover
-  {
-    color: rgb(249, 249, 253);
-    transform: scale(1.30); ;
- 
-  }
 
-  
-  
-  
-      
-  
-  
-  
-    
-  
-  
-  
-  
-  
+  ul.pagination li :hover
+{
+  color: rgb(249, 249, 253);
+  transform: scale(1.30); ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

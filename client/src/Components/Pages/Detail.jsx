@@ -2,7 +2,9 @@ import React, {useEffect} from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { getDetail, clearDetail, getAllDogs } from "../../Actions";
 import Nav from '../Nav'
+import load from '../Img/loading.gif'
 import barking from '../Img/barking.jpg'
+import s from '../Styles/Detail.module.css'
 
 
 
@@ -18,21 +20,25 @@ function Detail(props) {
         },[id, dispatch])
     
     return (
-     <div>
-         <Nav/>
+     <div className={s.gral}>
+          <Nav/>
+          
+         <div > 
         {
          myDog.length === 0 ?  
-         <p>Loading...</p> : 
+         <p><img src={load} height="200px" width="200px"/></p> : 
          myDog.length > 0 && 
-        <div> 
-  <h1> {myDog[0].name.toUpperCase()}</h1>
-  <>{myDog[0].image != "" ? <img src = {myDog[0].image} alt= "Barking in another place" width= "400px" height="200"/> : <img src = {barking} alt = "Woof"/>} </>
-  <h2> Weight: {myDog[0].min_weight} - {myDog[0].max_weight} kgs.</h2>
-  <h2> Height: {myDog[0].min_height} - {myDog[0].max_height} cms. </h2>
-  <h2> Life Span : {myDog[0].life_span}</h2>
-  <h2>Temperaments: {myDog[0].createdInDataBase? myDog[0].temperaments.map(el => el.name ).join(', '): myDog[0].temperament.split(', ').map(e => e ).join(', ')}</h2> 
+        <div className={s.container}> 
+  <h1 > {myDog[0].name.toUpperCase()}</h1>
+  <>{myDog[0].image != "" ? <img className={s.imgdetail} src = {myDog[0].image} alt= "Barking in another place"/> : <img src = {barking} alt = "Woof"/>} </>
+  <h5 > Weight: {myDog[0].min_weight} - {myDog[0].max_weight} kgs.</h5>
+  <h5> Height: {myDog[0].min_height} - {myDog[0].max_height} cms. </h5>
+  <h5> Life Span : {myDog[0].life_span}</h5>
+  <h5>Temperaments: {myDog[0].createdInDataBase? myDog[0].temperaments.map(el => el.name ).join(', '): myDog[0].temperament.split(', ').map(e => e ).join(', ')}</h5> 
 </div>  }
+</div>
 <div> 
+
 
 
 
