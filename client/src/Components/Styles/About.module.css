@@ -1,0 +1,20 @@
+.gral{
+    width: 1500px;
+    height: 800px;
+    background-color: #272626;
+    font-family: "Montserrat";
+    font-size: 16px;
+    text-decoration: 'none';
+    color:#fcf7f7;
+ }
+
+ .texto{
+     width: 600px;
+     height: auto;
+     display: inline-block;
+     align-items: center;
+     border-bottom: #fcf7f7 3px solid;
+     margin-bottom: 20px;
+     margin-top: 20px;
+     line-height: 30px;
+ }

@@ -11,10 +11,10 @@ function Nav() {
 
     return (
         <div className={s.nav}>
-            <Link to= '/dogs'> <button className={s.btn}> <p><img src= {Home} weight="40px" height="40px" alt="Home"/> HOME </p> </button></Link>
-            <Link to = '/dogs/create'> <button className={s.btn}> <p> <img src={Create} weight="40px" height="40px" alt= "CREATE"/> CREATE </p> </button></Link>
-            <Link to= '/favorites'> <button className={s.btn}> <p><img src={Like}  weight="40px" height="40px" alt="Favorites"/> FAVORITES </p></button></Link>
-            <Link to= '/about'> <button className={s.btn}><p> <img src={About} weight="40px" height="40px" alt= "ABOUT"/>  ABOUT</p></button> </Link>
+            <Link to= '/dogs'> <button className={s.btn}> <img src= {Home} weight="40px" height="40px" title="HOME"/></button></Link>
+            <Link to = '/dogs/create'> <button className={s.btn}>  <img src={Create} weight="40px" height="40px" title= "CREATE"/>  </button></Link>
+            <Link to= '/favorites'> <button className={s.btn}> <img src={Like}  weight="40px" height="40px" title="FAVORITES"/> </button></Link>
+            <Link to= '/about'> <button className={s.btn}><img src={About} weight="40px" height="40px" title= "ABOUT"/> </button> </Link>
           
         </div>
     )

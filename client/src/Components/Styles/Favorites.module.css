@@ -1,4 +1,3 @@
-@import url('//db.onlinewebfonts.com/c/1a9e06429c308314c75092b63b2c18f4?family=Biko');
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
@@ -9,8 +8,32 @@
     color: rgb(189, 186, 186);
     font-family: "Montserrat";
 }
-
+.title{
+    padding: 25px;
+    border-top: whitesmoke 3px solid;
+}
+.box{
+    border: whitesmoke 2 px solid
+}
 .fav{
+    width: 60%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
 }
+
+.btn{
+    width: 60px;
+    height: 60px;
+    top: 55px;
+    background-color:transparent; 
+    border: none;     
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color:#1f1e1e; 
+}
+
+
+

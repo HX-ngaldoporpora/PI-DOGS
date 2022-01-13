@@ -82,29 +82,30 @@ useEffect (() => {
 
     return (
         <div className={s.gral}>
-            <div className={s.head}> 
-            <div> <Nav/> </div> 
-             <div className={s.inhead}> 
-             <button className={s.btn}  onClick = {e=>{handleClick(e)}}> <img src={Reload}  weight="40px" height="40px" alt= "Refresh"/> </button>
+           <div> <Nav/> </div> 
+            
+            <div className={s.head} > 
+              
              <SearchBar/>
-             </div>
-                      
+             <button className={s.btn}  onClick = {e=>{handleClick(e)}}> <img src={Reload}  weight="40px" height="40px" alt= "Refresh"/> </button>
+                          
             </div>
             <div className={s.container}>
             <div className={s.filtros}>
-            
-            <div >     
-        <select className={s.filters} onClick = {(e) =>  handleSortWeight(e)}>
-            <option value = "asc"> Lighters </option>
-            <option value = "desc"> Heaviers </option>
-        </select>
-        </div>  
+           
         <div >  
         <select className={s.filters} onChange = {e => handleSort(e)}>
             <option value = "az"> A-Z</option>
             <option value = "za"> Z-A </option>
         </select>
         </div>
+        <div >     
+        <select className={s.filters} onClick = {(e) =>  handleSortWeight(e)}>
+            <option value = "asc"> Lighters </option>
+            <option value = "desc"> Heaviers </option>
+        </select>
+        </div>  
+
         <div >     
         <select className={s.filters} onChange = {(e) => {handleFilterCreated(e)}}> 
             <option value = "all">Breeds</option>

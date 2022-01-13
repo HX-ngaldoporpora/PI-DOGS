@@ -12,7 +12,7 @@ const [name, setName] = useState("")
 function handleInputChange (e) {
         e.preventDefault();
         setName(e.target.value);
-        dispatch(getNameDog(name));
+       
           }
 
 function handleSubmit(e){
@@ -27,7 +27,7 @@ function handleSubmit(e){
      
     return (
       
-            <div>
+            <div className={s.gral}>
                 <input
                 className={s.searchinput}
                 type = "text"
@@ -37,9 +37,8 @@ function handleSubmit(e){
                 onKeyPress={e => e.key === 'Enter' && handleSubmit(e)}
                 onChange = {(e) => handleInputChange(e)}
                 />
-                
                 <button type = 'submit' className={s.btn}
-                onClick = {(e) => handleSubmit(e)}> <img src={Lupa} alt="buscar" weight="40px" height="40px"/> </button>
+                onClick = {(e) => handleSubmit(e)}> <img src={Lupa} alt="buscar" weight="30px" height="30px"/> </button>
                 </div>
          
      
