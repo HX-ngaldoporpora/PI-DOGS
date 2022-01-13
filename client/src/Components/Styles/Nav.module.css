@@ -3,13 +3,16 @@
 .nav{
     position: top;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     align-items: center;
     justify-content: space-around;
     background-color: #202020;
-    width:100%;
+    width:1450px;
     padding-bottom: 20px;
     border-bottom: whitesmoke 3px solid;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 50px;
 }
 
 .btn{

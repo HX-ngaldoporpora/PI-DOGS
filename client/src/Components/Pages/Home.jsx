@@ -135,7 +135,7 @@ useEffect (() => {
                    key = {el.id}
                    id = {el.id}
                    max_weight = {el.max_weight}
-                  
+                                     
                    />
                    </div>
             )
