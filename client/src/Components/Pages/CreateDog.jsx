@@ -90,6 +90,7 @@ const handleDelete = (e) => {
           })
     history.push("/dogs")
 }
+
 function handleChange(e) {
     setInput({
         ...input,
@@ -108,16 +109,16 @@ useEffect (() => {
     return (
         <div >
             <Nav/>
-        <div className = {s.masgeneral}>
+        <div className = {s.general}>
         <div className={s.container}>
          <div className={s.uno}>
          <h1 className={s.title}> CREATE YOUR OWN DOG'S BREED </h1>
          </div>
          
-         <div className={s.dos}>    
+             
          <form className={s.form} onSubmit={e => {handleSubmit(e)}}>
-         
-         
+         <div className={s.dos}>        
+        <div>
          <input
          className={s.insideinput_title}
          placeholder='Name...'
@@ -126,11 +127,9 @@ useEffect (() => {
          name="name" 
           onChange = {(e) => handleChange(e)}/>
           {errors.name && (<p className={s.error}>{errors.name}</p>)} 
-     
-        
+          </div>   
          <img src= {Barking} alt="Foto perrito" className={s.fotocarnet}/>
-         
-        
+         <div>       
         <label className={s.subtitle}>Life Span </label>
         <input
               className={s.insideinput}
@@ -140,8 +139,8 @@ useEffect (() => {
              onChange = {(e) => handleChange(e)}/>
              <label className={s.subtitend}> years </label>
              {errors.life_span && (<p className={s.error}>{errors.life_span}</p>)} 
-       
-              
+             </div>     
+             <div>   
         <label className={s.subtitle} >Min weight   </label>
             <input
               className={s.insideinput}
@@ -152,9 +151,8 @@ useEffect (() => {
             onChange = {(e) => handleChange(e)}/>
             <label className={s.subtitend}> kgs </label>
          {errors.min_weight && (<p className={s.error}>{errors.min_weight}</p>)}
-        
-
-        
+         </div>   
+                  <div>    
         <label className={s.subtitle} >Max weight   </label>
             <input
               className={s.insideinput}
@@ -165,9 +163,8 @@ useEffect (() => {
             onChange = {(e) => handleChange(e)}/>
             <label className={s.subtitend}> kgs </label>
          {errors.max_weight && (<p className={s.error}>{errors.max_weight}</p>)} 
-          
-        
-       
+         </div>  
+                 <div>  
         <label className={s.subtitle}>Min height   </label>
          <input
            className={s.insideinput}
@@ -178,9 +175,8 @@ useEffect (() => {
          onChange = {(e) => handleChange(e)}/>
          <label className={s.subtitend}> cms </label>
         {errors.min_height && (<p className={s.error}>{errors.min_height}</p>)} 
-       
-    
-   
+        </div>    
+        <div>
      <label className={s.subtitle}>Max height   </label>
          <input
          className={s.insideinput}
@@ -191,9 +187,8 @@ useEffect (() => {
          onChange = {(e) => handleChange(e)}/>
          <label className={s.subtitend}> cms </label>
           {errors.max_height && (<p className={s.error}>{errors.max_height}</p>)} 
-         
-
-     
+          </div>
+          <div>
     <label className={s.subtitle} >Picture   </label>
      <input
        className={s.insideinput}
@@ -201,39 +196,40 @@ useEffect (() => {
        value= {input.image}
        name="image" 
        onChange = {(e) => handleChange(e)}/>
- 
-
-  
-        <label className={s.subtitle}> Temperaments   </label> 
+ </div>
+ <div>
+         <label className={s.subtitle}> Temperaments   </label> 
         <select className={s.selectinside} value= {input.temperament} onChange = {(e)=> handleSelect(e)}>
          {temperaments.map((el) => (<option value={el.name}> {el.name} </option>))}
         <ul> <li> {input.temperament.map(el => el + ", ")} </li></ul>
         {errors.temperament && (<p className={s.error}>{errors.temperament}</p>)}
         </select>
+        </div>
+        </div>
 
         <div className={s.tres}>
-    <button className={s.btn} disabled={Object.keys(errors).length > 0 || input.temperament.length === 0 ? true : false} type ='submit'> <p><img src={ok} width="40px" height="40px" /> CREATE </p> </button>          
+        <button className={s.btn} disabled={Object.keys(errors).length > 0 || input.temperament.length === 0 ? true : false} type ='submit'> <p><img src={ok} width="40px" height="40px" /> CREATE </p> </button>          
          <Link to="/dogs">
         <button className={s.btn}><p><img src={back} width="40px" height="40px"/>BACK </p></button>
         </Link>
         </div>
-
         </form>
 
+        <div className={s.boxremove}>
+         <p>Temperaments: </p>
+         <ul >
+        {input.temperament.map(el=>  <li className={s.remove}> {el} <button className= {s.btnremove} onClick={() =>handleDelete(el)}> 
+        <img src={Remove} height= "15px" weight= "15px"alt="delete"/> </button></li> )}
+        </ul>
+         </div>
+
 
          </div>
-        
+         
         
          </div>
-         <div className={s.boxremove}>
-         <p>Temperaments: </p>
-     <ul >
-    {input.temperament.map(el=>  <li className={s.remove}> {el} <button className= {s.btnremove} onClick={() => handleDelete(el)}> 
-<img src={Remove} height= "15px" weight= "15px"alt="delete"/> </button></li> )}
-    </ul>
- </div>
- </div>
-        </div>
+         </div>
+      
     
       
     )
