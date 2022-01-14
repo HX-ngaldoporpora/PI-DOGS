@@ -3,32 +3,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 .masgeneral{
-    background-color: #272626;  
-}
-.general {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #272626;
+width: 100vw;
+height: 800px;
+background-color: #272626;
 }
 
-.form {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.container{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
 }
-.box {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-radius: 5px;
-    background-color: rgb(53, 53, 52);
-    width: 900px;
-    height: 550px;
-    margin-top: 20px;
-    padding-top: 40px;
 
+.title{
+    font-family: "Montserrat";
+    font-size: 30px;
+    background-color: #272626; 
+    color: rgba(230, 227, 227, 0.726);
+    justify-content: center;
+    display: flex;
+    white-space: nowrap;
+}
+.dos{
+    background: rgb(53, 53, 52);
+    width: 400px;
+    height: 800px;
+    display: flex;
+    
+    border-radius: 5px; 
+     box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: center;
+    text-decoration: "none";
+    color:#fcf7f7;
+    margin-left: 40px;
+}
+
+.insideinput {
+    font-size: 20px;
+    font-family: "Montserrat";
+    text-align: center;
+    
+    border: #272626 1px solid;
+    outline: none;
+    color: white;
+    width: 200px;
+    margin-top: 5px;
+    border-radius: 3px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    background-color: transparent;
+}
+.insideinput_title {
+    font-family: "Montserrat";
+    font-size: 30px;   
+    font-weight: bold; 
+    text-align: center;
+    border: #272626 1px solid;
+    outline: none;
+    color: white;
+    width: 400px;
+    margin-top: 5px;
+    border-radius: 3px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    background-color: transparent;
+}
+.subtitle {
+    border-radius: 3px;
+    color: rgba(230, 227, 227, 0.726);
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-weight: 900;
+    padding-right: 10px;
+}
+.subtitend {
+     border-radius: 3px;
+    color: rgba(230, 227, 227, 0.726);
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-weight: 900;
+    padding-left: 10px;
 }
 .btn {
     width: 100px;
@@ -49,61 +104,15 @@
     border-radius: 5px;
 }
 
-.botones{
+.tres{
     display: grid;
     grid-template-columns: auto;
   }
-
-
-.title{
-    font-family: "Montserrat";
-    font-size: 30px;
-    background-color: #272626; 
-    color: rgba(230, 227, 227, 0.726);
-    justify-content: center;
-    display: flex;
-    white-space: nowrap;
-}
-
-.subtitle {
-    border-radius: 3px;
-    color: rgba(230, 227, 227, 0.726);
-    font-family: "Montserrat";
-    font-size: 20px;
-    font-weight: 900;
-    padding-right: 10px;
-}
-.subtitend {
-     border-radius: 3px;
-    color: rgba(230, 227, 227, 0.726);
-    font-family: "Montserrat";
-    font-size: 20px;
-    font-weight: 900;
-    padding-left: 10px;
-}
-
 .error{
     font-family: "Montserrat";
     font-size: 18px;
     color: rgb(250, 23, 23)
 }
-
-.insideinput {
-    font-size: 22px;
-    font-family: "Montserrat";
-    justify-content: center;
-    border: #272626 1px solid;
-    outline: none;
-    color: white;
-    font-weight: bold;
-    width: 200px;
-    margin-top: 5px;
-    border-radius: 3px;
-    padding-bottom: 3px;
-    padding-top: 3px;
-    background-color: transparent;
-}
-
 .remove{
     display: inline;
     font-family: "Montserrat";
@@ -121,8 +130,7 @@
   background-color: #161616;
   border-radius: 5px;
 }
-.boxremove{
-    
+.boxremove{ 
     border-radius: 8px;
     width: 890px;
     display: flex;
@@ -134,11 +142,11 @@
     padding: 5px;
     color: rgba(255, 250, 250, 0.726);
 }
-s.fotocarnet{
-    padding: 5px;
-    margin:5px;
+.fotocarnet{
+   width: 400px;
     border-style: 1px black;
     display: block;
+
 }
 
 .selectinside{

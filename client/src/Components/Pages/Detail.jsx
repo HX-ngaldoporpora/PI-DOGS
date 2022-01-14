@@ -26,7 +26,7 @@ function Detail(props) {
          <div > 
         {
          myDog.length === 0 ?  
-         <p><img src={load} height="200px" width="200px"/></p> : 
+         <p><img src={load} height="200px" width="200px" alt="loading"/></p> : 
          myDog.length > 0 && 
         <div className={s.container}> 
   <h1 > {myDog[0].name.toUpperCase()}</h1>

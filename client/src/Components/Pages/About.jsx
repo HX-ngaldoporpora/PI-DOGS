@@ -19,9 +19,8 @@ Save the chosen race in favorites ... and delete it if you have changed your min
 Welcome to DATAWOOF.</h2>
 </div>
             <div>
-            <a href="https://github.com/NaGaldo"><img src={gitHub} width="80px" height="80px"/> </a>
-            <a href="https://www.linkedin.com/in/natalia-galdoporpora-0029a5220"><img src=
-            {linkedIn} width="80px" height="80px"/> </a>
+            <a href="https://github.com/NaGaldo"><img src={gitHub} width="80px" height="80px" alt="github"/> </a>
+            <a href="https://www.linkedin.com/in/natalia-galdoporpora-0029a5220"><img src={linkedIn} width="80px" height="80px"alt="linkedin"/> </a>
             <h3>Natalia Galdoporpora</h3>
             </div>
             
