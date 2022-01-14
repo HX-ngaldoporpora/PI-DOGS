@@ -122,7 +122,7 @@
   border-radius: 5px;
 }
 .boxremove{
-    border: rgb(128, 128, 128) 1px solid;
+    
     border-radius: 8px;
     width: 890px;
     display: flex;
@@ -138,7 +138,7 @@ s.fotocarnet{
     padding: 5px;
     margin:5px;
     border-style: 1px black;
-    display: inline;
+    display: block;
 }
 
 .selectinside{

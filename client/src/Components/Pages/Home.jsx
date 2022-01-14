@@ -10,9 +10,6 @@ import Reload from '../Img/reload.png'
 import load from '../Img/loading.gif'
 import s from '../Styles/Home.module.css'
 
-
-
-
 function Home() {
 
 const dispatch = useDispatch()
@@ -41,10 +38,8 @@ function handleSelect(e){
 function handleClick(e){
     e.preventDefault();
     dispatch(getAllDogs());
-    setCurrentPage(1)
-    
+    setCurrentPage(1)  
 }
-
 
 //Filter by Breeds
 const [breeds, setBreeds] = useState('All')
@@ -52,9 +47,9 @@ function handleFilterCreated (e){
     e.preventDefault();
     dispatch(filterCreated(e.target.value))
     setCurrentPage(1)
-    setBreeds(e.target.value)
-    
+    setBreeds(e.target.value) 
 }
+
  //Order by alphabet
  const [orden,setOrden] = useState('')
  function handleSort (e){
@@ -62,8 +57,7 @@ function handleFilterCreated (e){
      dispatch(orderByName(e.target.value))
      setCurrentPage(1)
      setOrden(`Ordenado ${e.target.value}`)
-   
- }
+  }
 
  //Ordenamiento por peso
  const [ordenPorPeso, setOrdenPorPeso] = useState('')
@@ -80,16 +74,14 @@ useEffect (() => {
     dispatch(getTemperaments())
 }, [dispatch])
 
+console.log(allDogs)
     return (
         <div className={s.gral}>
            <div> <Nav/> </div> 
-            
-            <div className={s.head} > 
-              
-             <SearchBar/>
-             <button className={s.btn}  onClick = {e=>{handleClick(e)}}> <img src={Reload}  weight="40px" height="40px" alt= "Refresh"/> </button>
-                          
-            </div>
+           <div className={s.head}> 
+                <SearchBar/>
+             <button className={s.btn}  onClick = {e=>{handleClick(e)}}> <img src={Reload}  weight="40px" height="40px" alt= "Refresh"/> </button>                        
+             </div> 
             <div className={s.container}>
             <div className={s.filtros}>
            
@@ -101,8 +93,8 @@ useEffect (() => {
         </div>
         <div >     
         <select className={s.filters} onClick = {(e) =>  handleSortWeight(e)}>
-            <option value = "asc"> Lighters </option>
-            <option value = "desc"> Heaviers </option>
+            <option value = "asc"> Lightest </option>
+            <option value = "desc"> Heaviest </option>
         </select>
         </div>  
 
@@ -110,7 +102,7 @@ useEffect (() => {
         <select className={s.filters} onChange = {(e) => {handleFilterCreated(e)}}> 
             <option value = "all">Breeds</option>
             <option value = "created">Created Breeds</option>
-            <option value = "api"> Existent Breeds</option>
+            <option value = "api"> Api Breeds</option>
         </select>
         </div>
         <div> 
@@ -134,8 +126,11 @@ useEffect (() => {
                    image = {el.image}
                    key = {el.id}
                    id = {el.id}
+                   min_weight = {el.min_weight}
                    max_weight = {el.max_weight}
-                                     
+                   temperaments={el.temperaments?.map((t) => t.name).join(', ')}
+                   temperament={el.temperament}
+                   
                    />
                    </div>
             )
@@ -154,7 +149,7 @@ useEffect (() => {
     )
         
 }
-
 export default Home
 /* <Link to ={`/dogs/${el.id}`} > 
  </Link>*/
+

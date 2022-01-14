@@ -6,7 +6,7 @@
 .card{
     background: rgb(53, 53, 52);
     width: 280px;
-    height: 300px;
+    height: 350px;
     display: flex;
     margin: 10px;
     border-radius: 5px; 
@@ -20,8 +20,8 @@
 } 
 .card:hover{
 z-index: 1;
-transform: scale(1.80);
-filter:brightness(110%);
+transform: scale(1.20);
+filter:brightness(120%);
 float: inline-start;
 }
 h5{
@@ -43,16 +43,16 @@ h5{
 filter:brightness(130%)
 }
 
-h6{
+.extras{
     color: whitesmoke;
-    display: inline-block;
+    display: inline;
     margin-top: 0;
-
+    font-size: 12px;
 }
 
 .img{
-    position:relative;
-    align-self: center;
+ position:relative;
+ align-self: center;
 padding: 0px;
 height: 180px;
 width: 280px;
@@ -60,8 +60,6 @@ filter:
 contrast(120%) 
 opacity(60%);
 }
-
-
 
 .favorite{
     position: absolute;

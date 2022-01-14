@@ -129,13 +129,12 @@ useEffect (() => {
      
        <div className={s.box}>
        
-       <div className={s.fotocarnet}>
-       <img src= {Barking} alt="Foto perrito" />
-     </div>
+          <div >
+         <img src= {Barking} alt="Foto perrito" className={s.fotocarnet}/>
+         </div>
        
         
         <div >
-
         <label className={s.subtitle}>Name</label>
             <input
              className={s.insideinput}
@@ -243,6 +242,7 @@ useEffect (() => {
         
         </form>
          </div>
+         
          <div className={s.boxremove}>
          <p>Temperaments: </p>
      <ul >

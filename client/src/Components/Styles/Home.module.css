@@ -28,12 +28,12 @@
     }
 .head{
     position: relative;
-    display: inline block;
-    justify-content: center ;
+    display:flex;
+    justify-content:flex-start;
     background-color: #272626;
     padding: 10px;
     margin: 10px;
-    width: 400px;
+    width: 100%;
     height: auto;
     }
 
@@ -42,6 +42,8 @@
 .btn{
     background-color:#272626 ;
     border: none;
+    position: absolute;
+    right: 80px
 }
 .btn:hover{
     border: palegoldenrod 1px;
