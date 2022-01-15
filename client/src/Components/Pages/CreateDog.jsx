@@ -15,31 +15,47 @@ function validate (input) {
     let errors = {};
     if (!input.name){
         errors.name = "Name is required"}
-    else if (!input.name.match(/^[A-Za-z]+$/)){
+    else if (!input.name.match(/^[A-Za-z\s]+$/)){
         errors.name = "Only letters, please"
     
 }
-    ///^[A-Za-z]+$/i
+    
     if(!input.life_span){
         errors.life_span = "Life span is required"
     }
-    /*if (input.min_height < 10){
-    errors.min_height = "Height must be more than 10 cm"
+    else if (input.life_span < 1 || input.life_span > 25) {
+        errors.life_span = "Between 1 - 25 years"
     }
-    if (input.max_height > 80){
-        errors.max_height = "Height must be less than 80 cm"
+
+    if (!input.min_height){
+        errors.min_height = "Min height is required"
     }
-    if (input.min_weight < 1){
-        errors.min_weight = "Weight must be more than 1 kg"
+    else if (input.min_height < 10){
+    errors.min_height = "Must be more than 10 cm"
     }
-    if (input.max_weight > 100){
-        errors.max_weight = "Weight must be less than 100 kg"
-    }*/
-    if(Number(input.min_height) > Number(input.max_height)){
-    errors.min_height = "Max height must be higher than min height"
+    if (!input.max_height){
+        errors.max_height = "Max height is required"
     }
-    if(Number(input.min_weight) > Number(input.max_weight)){
-    errors.max_weight = "Max weight must be heavier than min weight"
+    else if (input.max_height > 80){
+        errors.max_height = "Must be less than 80 cm"
+    }
+    if (!input.min_weight){
+        errors.min_weight = "Min weight is required"
+    }
+    else if (input.min_weight < 1){
+        errors.min_weight = "Must be more than 1 kg"
+    }
+    if (!input.max_weight){
+        errors.max_weight = "Max weight is required"
+    }
+    else if (input.max_weight > 100){
+        errors.max_weight = "Must be less than 100 kg"
+    }
+   else if(Number(input.min_height) > Number(input.max_height)){
+    errors.max_height = "Must be higher than min height"
+    }
+   else if(Number(input.min_weight) > Number(input.max_weight)){
+    errors.max_weight = "Must be heavier than min weight"
     }        
    
     return errors
@@ -142,8 +158,8 @@ useEffect (() => {
         <input
               className={s.insideinput}
                type= "number"
-               min="0"
-               max="40"
+               min="1"
+               max="25"
              value= {input.life_span}
              name="life_span" 
              onChange = {(e) => handleChange(e)}/>
