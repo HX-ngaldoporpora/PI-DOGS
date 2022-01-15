@@ -14,7 +14,14 @@ import back from '../Img/back.png'
 function validate (input) {
     let errors = {};
     if (!input.name){
-        errors.name = "Name is required"
+        errors.name = "Name is required"}
+    else if (!input.name.match(/^[A-Za-z]+$/)){
+        errors.name = "Only letters, please"
+    
+}
+    ///^[A-Za-z]+$/i
+    if(!input.life_span){
+        errors.life_span = "Life span is required"
     }
     /*if (input.min_height < 10){
     errors.min_height = "Height must be more than 10 cm"
@@ -28,12 +35,12 @@ function validate (input) {
     if (input.max_weight > 100){
         errors.max_weight = "Weight must be less than 100 kg"
     }*/
-    if(input.min_height > input.max_height){
-    errors.max_height = "Max height must be higher than min height"
+    if(Number(input.min_height) > Number(input.max_height)){
+    errors.min_height = "Max height must be higher than min height"
     }
-    if(input.min_weight > input.max_weight){
+    if(Number(input.min_weight) > Number(input.max_weight)){
     errors.max_weight = "Max weight must be heavier than min weight"
-    }  
+    }        
    
     return errors
 }
@@ -55,6 +62,7 @@ function CreateDog() {
     image: "",
     temperament: []
 });
+console.log(input)
 
 function handleSelect(e) {
     if (input.temperament.includes(e.target.value)) {
@@ -77,7 +85,7 @@ const handleDelete = (e) => {
  function handleSubmit(e) {
     e.preventDefault();
     dispatch(postDog(input))
-    alert("Your new breed was created.... Frankenstein")
+    alert("Congrats! Your new breed was created")
     setInput({
         name: "",
         life_span: "",
@@ -134,6 +142,8 @@ useEffect (() => {
         <input
               className={s.insideinput}
                type= "number"
+               min="0"
+               max="40"
              value= {input.life_span}
              name="life_span" 
              onChange = {(e) => handleChange(e)}/>
@@ -202,7 +212,7 @@ useEffect (() => {
         <select className={s.selectinside} value= {input.temperament} onChange = {(e)=> handleSelect(e)}>
          {temperaments.map((el) => (<option value={el.name}> {el.name} </option>))}
         <ul> <li> {input.temperament.map(el => el + ", ")} </li></ul>
-        {errors.temperament && (<p className={s.error}>{errors.temperament}</p>)}
+       
         </select>
         </div>
         </div>
@@ -218,7 +228,7 @@ useEffect (() => {
         <div className={s.boxremove}>
          <p>Temperaments: </p>
          <ul >
-        {input.temperament.map(el=>  <li className={s.remove}> {el} <button className= {s.btnremove} onClick={() =>handleDelete(el)}> 
+        {input.temperament.map(el=>  <li className={s.remove}> {el} <button className= {s.btnremove} onClick={() =>handleDelete(el)}>
         <img src={Remove} height= "15px" weight= "15px"alt="delete"/> </button></li> )}
         </ul>
          </div>

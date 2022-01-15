@@ -12,9 +12,6 @@ align-items: center;
 justify-items: center;
 }
 
-
-
-
 .title{
     font-family: "Montserrat";
     font-size: 30px;
@@ -62,7 +59,7 @@ justify-items: center;
     outline: none;
     color: white;
     width: 400px;
-    margin-top: 5px;
+    
     border-radius: 3px;
     padding-bottom: 3px;
     padding-top: 3px;

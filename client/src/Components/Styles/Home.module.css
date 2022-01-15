@@ -68,19 +68,20 @@
     padding: 0;
     margin: 0;
     justify-content:center;
-    align-content: center;
+   
     }
 
 .filtros{
     display:grid;
-    grid-template-rows: repeat(1fr);
+    grid-template-rows: repeat(8, 1fr);
     padding: 0px;
     padding-left: 20px;
     position: relative;
     margin-left: 0px;
     width: 200px;
-    height: 500px;
+    height: 735px;
     border-right: whitesmoke 3px solid;
+    
 }  
 .filters{
     font-size: 18px;

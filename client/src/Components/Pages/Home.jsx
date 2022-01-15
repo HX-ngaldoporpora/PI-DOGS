@@ -76,7 +76,7 @@ useEffect (() => {
 
 console.log(allDogs)
     return (
-        <div className={s.gral}>
+        <div className={s.gral} >
            <div> <Nav/> </div> 
            <div className={s.head}> 
                 <SearchBar/>
@@ -119,7 +119,7 @@ console.log(allDogs)
         <div className={s.divcard} > 
         {currentDog.length === 0 ? <div className={s.loading}><img className={s.imgload} src={load} alt="LOADING" /></div>: currentDog.map(el=> {
             return(
-                <div>
+                <div key={el.id}>
                        
                    <Card
                    name = {el.name}

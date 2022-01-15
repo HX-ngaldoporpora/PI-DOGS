@@ -11,16 +11,21 @@
     }
 
 .welcome{
-    color:rgb(77, 77, 77);
+    border: none;
+    background-color: transparent;
+    color:rgb(80, 80, 80);
     text-shadow: 0.5 0.5 1px black;
     position:absolute;
     font-family: "Montserrat";
-    font-size: 50px;
+    font-size: 40px;
+    font-weight: bold;
     bottom: 80px;
     right: 150px;
     z-index: 1;
 }
 .welcome:hover{
+    border:rgb(80, 80, 80) 1px solid;
+    border-radius: 3px;
     transform: scale(1.20);
 }
 .img{

@@ -8,7 +8,7 @@ export default function LandingPage () {
         <div className={s.gral}>
             <img src={Hello} alt="Hello" className={s.img}/>          
              <Link to= "/dogs">
-            <h1 className={s.welcome} >Welcome!</h1>
+            <button className={s.welcome}> Come in! </button>
             </Link>
         </div>
     )
