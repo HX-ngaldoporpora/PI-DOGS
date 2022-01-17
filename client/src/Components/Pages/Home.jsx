@@ -17,10 +17,10 @@ const allDogs = useSelector ((state) => state.dogs)
 
 //paginado
 const [currentPage, setCurrentPage] = useState(1)
-const [dogsPerPage, setDogsPerPage] = useState(8)
-const numbersOfLastDog = currentPage * dogsPerPage
-const numberOfFirtsDog = numbersOfLastDog - dogsPerPage
-const currentDog = allDogs.slice(numberOfFirtsDog, numbersOfLastDog)
+const dogsPerPage = 8
+const numbersOfLastDog = currentPage * dogsPerPage   
+const numberOfFirtsDog = numbersOfLastDog - dogsPerPage 
+const currentDog = allDogs.slice(numberOfFirtsDog, numbersOfLastDog)   
 const paginado = (pageNumber) => {
     setCurrentPage(pageNumber)
 }
@@ -49,6 +49,8 @@ function handleFilterCreated (e){
     setCurrentPage(1)
     setBreeds(e.target.value) 
 }
+
+//Sorts
 const [orden,setOrden] = useState('Default')
 function handleSort (e){
     e.preventDefault()
@@ -63,13 +65,14 @@ useEffect (() => {
     dispatch(getTemperaments())
 }, [dispatch])
 
-console.log(allDogs)
+//console.log(allDogs)
     return (
         <div className={s.gral} >
            <div> <Nav/> </div> 
            <div className={s.head}> 
                 <SearchBar/>
-             <button className={s.btn}  onClick = {e=>{handleClick(e)}}> <img src={Reload}  weight="40px" height="40px" alt= "Refresh"/> </button>                        
+           
+          
              </div> 
             <div className={s.container}>
             <div className={s.filtros}>
@@ -101,13 +104,18 @@ console.log(allDogs)
                     ))}
         </select>   
         </div>
+        <div> 
+        <button className={s.btn}  onClick = {e=>{handleClick(e)}}> <img src={Reload} 
+   weight="40px" height="40px" alt= "Refresh"/> </button>  
+   </div>                      
         </div>
         <div className={s.divcard} > 
-        {currentDog.length === 0 ? <div className={s.loading}><img className={s.imgload} src={load} alt="LOADING" /></div>: currentDog.map(el=> {
+        {currentDog.length === 0 ? 
+        <div className={s.loading}><img className={s.imgload} src={load} alt="LOADING" /></div>
+        : currentDog.map(el=> {
             return(
                 <div key={el.id}>
-                       
-                   <Card
+                      <Card
                    name = {el.name}
                    image = {el.image}
                    key = {el.id}
@@ -116,8 +124,7 @@ console.log(allDogs)
                    max_weight = {el.max_weight}
                    temperaments={el.temperaments?.map((t) => t.name).join(', ')}
                    temperament={el.temperament}
-                   
-                   />
+                    />
                    </div>
             )
         })

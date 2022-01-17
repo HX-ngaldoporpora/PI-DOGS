@@ -13,7 +13,7 @@
 .welcome{
     border: none;
     background-color: transparent;
-    color:rgb(80, 80, 80);
+    color:whitesmoke;
     text-shadow: 0.5 0.5 1px black;
     position:absolute;
     font-family: "Montserrat";
@@ -24,8 +24,6 @@
     z-index: 1;
 }
 .welcome:hover{
-    border:rgb(80, 80, 80) 1px solid;
-    border-radius: 3px;
     transform: scale(1.20);
 }
 .img{
@@ -33,7 +31,12 @@
     height: 100hv;
     width: 100vw;   
 }
-
+.datawoof{
+    position:absolute;
+    left: 100px;
+    top: 75px;
+    z-index: 1;
+}
 .video{
 position: relative;
 height: 100hv;

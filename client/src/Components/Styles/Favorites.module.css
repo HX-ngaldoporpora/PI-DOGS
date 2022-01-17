@@ -26,7 +26,7 @@
 .fav{
 background: rgb(53, 53, 52);
 width: 280px;
-height: 450px;
+height: 400px;
 display: grid;
 grid-template-rows: repeat(3, 1fr);
 margin: 10px;
@@ -43,17 +43,18 @@ align-items: center;
 
 .btn{
     position: absolute;
- bottom: 0px;
- right: 5%;     
-  width: 40px;
-    height: 40px;
-    background-color:transparent; 
-    border: none;     
+    top: 8px;
+    right: 5%;     
+    width: 25px;
+    height: 25px;
+    background-color: transparent; 
+   border: none
+   
 }
 
 .btn:hover{
     cursor: pointer;
-    background-color:#1f1e1e; 
+   
 }
 
 .imgfav{
@@ -61,3 +62,8 @@ align-items: center;
     height: 200px
 }
 
+.like{
+    position: absolute;
+    bottom: 50px;
+    right: 5%;       
+}

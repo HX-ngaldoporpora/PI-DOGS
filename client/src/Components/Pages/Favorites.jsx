@@ -30,11 +30,11 @@ function Favorites() {
             {myFavorites?.map(el => {
                 return(
                     <div className= {s.fav} key = {el.id}>
-                    <h2 ><p> <img src={like}  weight="30px" height="30px" alt="like"/> <br/>{el.name} </p>  </h2>
-                   
-                   <div > {el.image?  <img className={s.imgfav} src= {el.image} alt ="woof"/> : <img src={barking} className={s.imgfav} alt="fav" />} </div>
-
-                    <button  className={s.btn} onClick = {() => handleDelete(el)}> <img src={remove} weight="30px" height="30px" alt="DELETE" /> </button> 
+                    <h2 >{el.name}  </h2>
+                    <div > {el.image?  <img className={s.imgfav} src= {el.image} alt ="woof"/> : <img src={barking} className={s.imgfav} alt="fav" />} </div>
+                    <img className={s.like} src={like}  weight="30px" height="30px" alt="like"/>
+                    <h4> A really lovely dog!</h4>
+                    <button  className={s.btn} onClick = {() => handleDelete(el)}> <img src={remove} weight="25px" height="25px" alt="DELETE" /> </button> 
                     </div>
                     )
             })

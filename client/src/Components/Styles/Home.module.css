@@ -29,7 +29,7 @@
 .head{
     position: relative;
     display:flex;
-    justify-content:flex-start;
+    justify-content:center;
     background-color: #272626;
     padding: 10px;
     margin: 10px;

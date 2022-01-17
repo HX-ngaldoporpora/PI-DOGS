@@ -11,12 +11,12 @@ router.get("/", async(req, res, next) => {
         let totalDogs = await getAllDogs();
         
         if(name) {
-            let dogName = await totalDogs.filter (el => el.name.toLowerCase().includes(name.toLowerCase()));
+            let dogName = await totalDogs.filter (el => el.name.toUpperCase().includes(name.toUpperCase()));
             dogName.length ?
             res.status(200).send(dogName):
             res.status(404).send("Error: Invalid breed")
         } else {
-            res.status(200).send(totalDogs)
+            res.status(200).json(totalDogs? totalDogs : "No dogs found")
         }
     }
     catch(error){
@@ -61,7 +61,7 @@ router.post("/", async (req, res) => {
     res.send("Dog add successfully")
     }
     catch (error) {
-        res.status(404).send("Error: Post failed")
+        res.status(500).send("Error: Post failed")
 
     }
 })

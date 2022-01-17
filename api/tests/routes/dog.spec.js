@@ -8,7 +8,7 @@ const request = require ('supertest')
 const agent = session(app);
 const dog = {
  // id: "c27ef91-0e8b-4fda-a041-0c8e20104587",
-  name: 'Pug',
+  name: 'Perrito',
   min_height: 20,
   max_height: 25,
   min_weight: 10,
@@ -33,7 +33,7 @@ describe('Dogs routes', () => {
 describe('Dogs Routes', function() {
   it('GET responds with a status 200 if it finds a dog', function() {
     return agent 
-      .get('/dogs?name=Pug') 
+      .get('/dogs?name=Perrito') 
       .expect(function(res){
         expect(res.status).equal(200)}); 
   });

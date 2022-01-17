@@ -106,7 +106,7 @@ export function postDog (payload) {
                 }
             } 
         catch(error){
-            alert ("Post failed")
+              alert("Post failed")
             }
         } 
  } 
