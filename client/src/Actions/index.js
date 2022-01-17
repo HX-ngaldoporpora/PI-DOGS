@@ -12,6 +12,7 @@ export const POST_DOG = "POST_DOG"
 export const CLEAR_DETAIL = "CLEAR_DETAIL"
 export const ADD_FAVORITE = "ADD_FAVORITE"
 export const REMOVE_FAVORITE = "REMOVE_FAVORITE"
+export const ORDER_SORT = "ORDER_SORT"
 
 export function getAllDogs () {
     return async function (dispatch){
@@ -88,16 +89,10 @@ export function filterCreated (payload) {
     }
 }
 
-export function orderByName(payload){
-    return {
-        type: ORDER_BY_NAME,
-        payload
-    }
-}
 
-export function orderByWeight(payload){
+export function orderSort(payload){
     return {
-        type: ORDER_BY_WEIGHT,
+        type: ORDER_SORT,
         payload
     }
 }
@@ -111,7 +106,7 @@ export function postDog (payload) {
                 }
             } 
         catch(error){
-            console.log(error)
+            alert ("Post failed")
             }
         } 
  } 
@@ -129,3 +124,17 @@ export function postDog (payload) {
          payload
      }
  }
+
+ export function orderByName(payload){
+    return {
+        type: ORDER_BY_NAME,
+        payload
+    }
+}
+
+export function orderByWeight(payload){
+    return {
+        type: ORDER_BY_WEIGHT,
+        payload
+    }
+}

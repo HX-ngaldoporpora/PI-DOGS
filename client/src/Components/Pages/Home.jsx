@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getAllDogs, getTemperaments, filterByTemperaments, filterCreated, orderByName, orderByWeight} from '../../Actions';
+import {getAllDogs, getTemperaments, filterByTemperaments, filterCreated, orderSort, orderByName, orderByWeight} from '../../Actions';
 import Card from '../Card'
 import Nav from '../Nav'
 import Pagination from '../Pagination';
@@ -49,24 +49,13 @@ function handleFilterCreated (e){
     setCurrentPage(1)
     setBreeds(e.target.value) 
 }
-
- //Order by alphabet
- const [orden,setOrden] = useState('')
- function handleSort (e){
-     e.preventDefault()
-     dispatch(orderByName(e.target.value))
-     setCurrentPage(1)
-     setOrden(`Ordenado ${e.target.value}`)
-  }
-
- //Ordenamiento por peso
- const [ordenPorPeso, setOrdenPorPeso] = useState('')
- function handleSortWeight(e){
+const [orden,setOrden] = useState('Default')
+function handleSort (e){
     e.preventDefault()
-    dispatch(orderByWeight(e.target.value))
+    dispatch(orderSort(e.target.value))
     setCurrentPage(1)
-       setOrdenPorPeso(e.target.value)
-}
+    setOrden(e.target.value)
+ }
 
 useEffect (() => {
     dispatch (getAllDogs())
@@ -87,12 +76,9 @@ console.log(allDogs)
            
         <div >  
         <select className={s.filters} onChange = {e => handleSort(e)}>
+            <option value ="default"> Sort by.. </option>
             <option value = "az"> A-Z</option>
             <option value = "za"> Z-A </option>
-        </select>
-        </div>
-        <div >     
-        <select className={s.filters} onClick = {(e) =>  handleSortWeight(e)}>
             <option value = "asc"> Lightest </option>
             <option value = "desc"> Heaviest </option>
         </select>
@@ -150,6 +136,22 @@ console.log(allDogs)
         
 }
 export default Home
-/* <Link to ={`/dogs/${el.id}`} > 
- </Link>*/
+ 
+ /*
+ //Order by alphabet
+ const [orden,setOrden] = useState('')
+ function handleSort (e){
+     e.preventDefault()
+     dispatch(orderByName(e.target.value))
+     setCurrentPage(1)
+     setOrden(e.target.value)
+  }
 
+ //Ordenamiento por peso
+ const [ordenPorPeso, setOrdenPorPeso] = useState('')
+ function handleSortWeight(e){
+    e.preventDefault()
+    dispatch(orderByWeight(e.target.value))
+    setCurrentPage(1)
+       setOrdenPorPeso(e.target.value)
+}*/

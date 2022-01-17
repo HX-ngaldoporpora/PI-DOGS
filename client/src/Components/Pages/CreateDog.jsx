@@ -99,6 +99,7 @@ const handleDelete = (e) => {
  }
 
  function handleSubmit(e) {
+    if (input.name && input.temperament) {
     e.preventDefault();
     dispatch(postDog(input))
     alert("Congrats! Your new breed was created")
@@ -114,6 +115,10 @@ const handleDelete = (e) => {
           })
     history.push("/dogs")
 }
+else{
+    alert ("Missing info!")
+}
+ }
 
 function handleChange(e) {
     setInput({
@@ -226,8 +231,8 @@ useEffect (() => {
  <div>
          <label className={s.subtitle}> Temperaments   </label> 
         <select className={s.selectinside} value= {input.temperament} onChange = {(e)=> handleSelect(e)}>
-         {temperaments.map((el) => (<option value={el.name}> {el.name} </option>))}
-        <ul> <li> {input.temperament.map(el => el + ", ")} </li></ul>
+         {temperaments.map((el) => (<option value={el.name} key={el.id}> {el.name} </option>))}
+       
        
         </select>
         </div>
@@ -255,16 +260,8 @@ useEffect (() => {
         
          </div>
          </div>
-      
-    
-      
-    )
+          
+          )
 }
-
-
-
-
- 
- 
 
 export default CreateDog
