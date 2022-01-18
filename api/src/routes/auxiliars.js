@@ -15,7 +15,7 @@ const getApiInfo = async () => {
             max_weight: Number(el.weight.metric.slice(4)),
             min_height: Number(el.height.metric.slice(0,2)),
             max_height: Number(el.height.metric.slice(4)),
-            image:  "https://cdn2.thedogapi.com/images/" + el.reference_image_id + ".jpg" 
+            image: `https://cdn2.thedogapi.com/images/${el.reference_image_id}.jpg`
         }
     });
   //  console.log(apiInfo)

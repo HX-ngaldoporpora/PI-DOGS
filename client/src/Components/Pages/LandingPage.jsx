@@ -1,17 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import s from "../Styles/LandingPage.module.css"
-import Hello from '../Img/welcome.jpg'
-import DataWoof from '../Img/DataWoof.png'
+import logo from '../Img/welcome.png'
+import DataWoof from '../Img/datawoof.jpg'
 
 export default function LandingPage () {
     return (
         <div className={s.gral}>
-            <img src={DataWoof} alt="DataWoof" className={s.datawoof} width="15%" height="15%"/>
-            <img src={Hello} alt="Hello" className={s.img}/>
+             <img src={DataWoof} alt="DataWoof" className={s.img}/>
              <Link to= "/dogs">
-            <button className={s.welcome}> Come in! </button>
-            </Link>
+                 <img src= {logo} alt="logo" className={s.welcome} width='40%' height="40%"/>
+              </Link>
         </div>
     )
 }

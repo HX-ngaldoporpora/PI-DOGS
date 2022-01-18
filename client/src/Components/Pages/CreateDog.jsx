@@ -239,9 +239,9 @@ useEffect (() => {
         </div>
 
         <div className={s.tres}>
-        <button className={s.btn} disabled={Object.keys(errors).length > 0 || input.temperament.length === 0 ? true : false} type ='submit'> <p><img src={ok} width="40px" height="40px" /> CREATE </p> </button>          
+        <button className={s.btn} disabled={Object.keys(errors).length > 0 || input.temperament.length === 0 ? true : false} type ='submit'> <p><img src={ok} width="40px" height="40px" alt="create"/> CREATE </p> </button>          
          <Link to="/dogs">
-        <button className={s.btn}><p><img src={back} width="40px" height="40px"/>BACK </p></button>
+        <button className={s.btn}><p><img src={back} width="40px" height="40px" alt="back"/>BACK </p></button>
         </Link>
         </div>
         </form>
@@ -249,7 +249,7 @@ useEffect (() => {
         <div className={s.boxremove}>
          <p>Temperaments: </p>
          <ul >
-        {input.temperament.map(el=>  <li className={s.remove}> {el} <button className= {s.btnremove} onClick={() =>handleDelete(el)}>
+        {input.temperament.map(el=>  <li className={s.remove} > {el} <button className= {s.btnremove} onClick={() =>handleDelete(el)}>
         <img src={Remove} height= "15px" weight= "15px"alt="delete"/> </button></li> )}
         </ul>
          </div>

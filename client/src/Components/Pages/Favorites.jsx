@@ -1,7 +1,6 @@
 import React from 'react'
 import {removeFavorite} from '../../Actions'
 import {useSelector, useDispatch} from 'react-redux'
-import {useHistory} from 'react-router-dom'
 import Nav from '../Nav'
 import barking from '../Img/barking.jpg'
 import remove from '../Img/remove.png'
@@ -11,21 +10,18 @@ import s from "../Styles/Favorites.module.css"
 
 function Favorites() {  
     const dispatch = useDispatch()
-    const history = useHistory()
     const myFavorites = useSelector ((state) => state.favorites)
-    console.log(myFavorites)
+    //console.log(myFavorites)
 
-    
-   function handleDelete (el){
-       console.log(el)
-      dispatch(removeFavorite(el.id))
-      alert("Remove from favorites")
-      history.push('/dogs')
+  function handleDelete (el){
+   //  console.log(el)
+    dispatch(removeFavorite(el.id))
+    alert("Remove from favourites")    
    }
      return (
         <div className={s.gral}> 
             <Nav/>
-            <h1 className={s.title}> My Favorites</h1>
+            <h1 className={s.title}> FAVOURITES</h1>
             <div className={s.box}> 
             {myFavorites?.map(el => {
                 return(

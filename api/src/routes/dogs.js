@@ -11,7 +11,7 @@ router.get("/", async(req, res, next) => {
         let totalDogs = await getAllDogs();
         
         if(name) {
-            let dogName = await totalDogs.filter (el => el.name.toUpperCase().includes(name.toUpperCase()));
+            let dogName = await totalDogs.filter(el => el.name.toUpperCase().includes(name.toUpperCase()));
             dogName.length ?
             res.status(200).send(dogName):
             res.status(404).send("Error: Invalid breed")

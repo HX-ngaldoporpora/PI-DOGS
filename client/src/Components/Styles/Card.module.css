@@ -21,7 +21,7 @@
 .card:hover{
 z-index: 1;
 transform: scale(1.20);
-filter:brightness(120%);
+filter:brightness(140%) contrast(120%);
 float: inline-start;
 }
 h5{
@@ -31,8 +31,7 @@ h5{
 .linkedname{
     font-family: "Montserrat";
     font-size: 17px;
-    text-decoration: none;
-    
+    text-decoration: none;    
     color: white;
     filter:brightness(110%);
     position: relative;
@@ -63,6 +62,6 @@ opacity(60%);
 
 .favorite{
     position: absolute;
-    bottom: 0px;
+    bottom: 8px;
     right: 5%;     
 }

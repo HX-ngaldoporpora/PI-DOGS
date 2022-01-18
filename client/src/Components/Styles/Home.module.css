@@ -29,24 +29,30 @@
 .head{
     position: relative;
     display:flex;
-    justify-content:center;
+    justify-content:flex-start;
     background-color: #272626;
     padding: 10px;
     margin: 10px;
     width: 100%;
     height: auto;
     }
-
-
-
 .btn{
-    background-color:#272626 ;
+    font-size: 18px;
+    font-family: "Montserrat";
+    border: #272626 1px solid;
+    outline: none;
+    color: whitesmoke;
+    font-weight: bold;
+    background-color: rgb(29, 29, 29);  
     border: none;
     position: absolute;
-    right: 80px
+    justify-content:start;
+   right: 20px;
+    width: 170px;
 }
 .btn:hover{
-    border: palegoldenrod 1px;
+    border: palegoldenrod 1px solid;
+    color: white;
     transform: scale(1.10);
     cursor: pointer;
 }

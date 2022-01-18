@@ -12,7 +12,6 @@ const [name, setName] = useState("")
 function handleInputChange (e) {
         e.preventDefault();
         setName(e.target.value);
-       
           }
 
 function handleSubmit(e){
@@ -40,16 +39,6 @@ function handleSubmit(e){
                 <button type = 'submit' className={s.btn}
                 onClick = {(e) => handleSubmit(e)}> <img src={Lupa} alt="buscar" weight="30px" height="30px"/> </button>
                 </div>
-         
-     
-     
-     
-     
-     
-     
-     
-     
-     
     )
 }
 

@@ -100,7 +100,7 @@ export function orderSort(payload){
 export function postDog (payload) {
     return async function(dispatch){
         try{
-            const response = await axios.post('http://localhost:3001/dogs', payload);
+            await axios.post('http://localhost:3001/dogs', payload);
             return {
                 type: POST_DOG,
                 }

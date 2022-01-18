@@ -1,4 +1,4 @@
-import {GET_ALL_DOGS, GET_NAME_DOG, GET_TEMPERAMENT, FILTER_BY_TEMPERAMENTS, FILTER_CREATED, ORDER_SORT,  GET_DETAIL, POST_DOG, CLEAR_DETAIL, ADD_FAVORITE, REMOVE_FAVORITE, ORDER_BY_NAME, ORDER_BY_WEIGHT} from "../Actions"
+import {GET_ALL_DOGS, GET_NAME_DOG, GET_TEMPERAMENT, FILTER_BY_TEMPERAMENTS, FILTER_CREATED, ORDER_SORT,  GET_DETAIL, POST_DOG, CLEAR_DETAIL, ADD_FAVORITE, REMOVE_FAVORITE, /*ORDER_BY_NAME, ORDER_BY_WEIGHT*/} from "../Actions"
 
 const initialState = {
     dogs: [],
@@ -100,6 +100,11 @@ function rootReducer(state = initialState, action) {
                         return 0;
                     }) 
                   }
+               }
+               else{
+                   return {
+                       ...state,
+                   }
                }
  
                case FILTER_BY_TEMPERAMENTS:

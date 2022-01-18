@@ -13,9 +13,9 @@ function Pagination({dogsPerPage, allDogs, paginado }) {
             <ul className={s.pagination}>
                 {pageNumbers?.map(number => (
                     <li key={number}>
-                        <a className={s.activa} onClick = {() => paginado(number)}>
+                        <button className={s.activa} onClick = {() => paginado(number)}>
                             {number}
-                        </a>
+                        </button>
                     </li>
                     ))} </ul>
                  

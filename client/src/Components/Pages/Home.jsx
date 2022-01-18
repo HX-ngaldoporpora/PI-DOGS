@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getAllDogs, getTemperaments, filterByTemperaments, filterCreated, orderSort, orderByName, orderByWeight} from '../../Actions';
+import {getAllDogs, getTemperaments, filterByTemperaments, filterCreated, orderSort /*orderByName, orderByWeight*/} from '../../Actions';
 import Card from '../Card'
 import Nav from '../Nav'
 import Pagination from '../Pagination';
@@ -42,7 +42,7 @@ function handleClick(e){
 }
 
 //Filter by Breeds
-const [breeds, setBreeds] = useState('All')
+const [, setBreeds] = useState('All')
 function handleFilterCreated (e){
     e.preventDefault();
     dispatch(filterCreated(e.target.value))
@@ -51,7 +51,7 @@ function handleFilterCreated (e){
 }
 
 //Sorts
-const [orden,setOrden] = useState('Default')
+const [,setOrden] = useState('Default')
 function handleSort (e){
     e.preventDefault()
     dispatch(orderSort(e.target.value))
@@ -105,8 +105,7 @@ useEffect (() => {
         </select>   
         </div>
         <div> 
-        <button className={s.btn}  onClick = {e=>{handleClick(e)}}> <img src={Reload} 
-   weight="40px" height="40px" alt= "Refresh"/> </button>  
+        <button className={s.btn}  onClick = {e=>{handleClick(e)}}> <div><>Refresh</> <img src={Reload} weight="15px" height="15px" alt= "Refresh"/></div> </button>  
    </div>                      
         </div>
         <div className={s.divcard} > 
