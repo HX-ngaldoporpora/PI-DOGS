@@ -9,6 +9,8 @@ import SearchBar from '../../Components/SearchBar';
 import Reload from '../Img/reload.png'
 import load from '../Img/loading.gif'
 import s from '../Styles/Home.module.css'
+import next from '../Img/next.png'
+import prev from '../Img/previus.png'
 
 function Home() {
 
@@ -18,8 +20,8 @@ const allDogs = useSelector ((state) => state.dogs)
 //paginado
 const [currentPage, setCurrentPage] = useState(1)
 const dogsPerPage = 8
-const numbersOfLastDog = currentPage * dogsPerPage   
-const numberOfFirtsDog = numbersOfLastDog - dogsPerPage 
+const numbersOfLastDog = currentPage * dogsPerPage   //8
+const numberOfFirtsDog = numbersOfLastDog - dogsPerPage //0
 const currentDog = allDogs.slice(numberOfFirtsDog, numbersOfLastDog)   
 const paginado = (pageNumber) => {
     setCurrentPage(pageNumber)
@@ -106,9 +108,10 @@ useEffect (() => {
         </div>
         <div> 
         <button className={s.btn}  onClick = {e=>{handleClick(e)}}> <div><>Refresh</> <img src={Reload} weight="15px" height="15px" alt= "Refresh"/></div> </button>  
-   </div>                      
+         </div>                      
         </div>
         <div className={s.divcard} > 
+      
         {currentDog.length === 0 ? 
         <div className={s.loading}><img className={s.imgload} src={load} alt="LOADING" /></div>
         : currentDog.map(el=> {
@@ -128,14 +131,22 @@ useEffect (() => {
             )
         })
         }
+        
+        
        </div> 
+       <button  onClick = {() =>paginado(currentPage === 1 ? currentPage : currentPage-1)}> <img className={s.prev} src= {prev} 
+alt="previous" /> </button>
+  <button  onClick = {() =>paginado(currentPage ===23 ? currentPage : currentPage+1)}> <img className={s.next}  src={next} 
+alt="NEXT" /></button>
        </div>
        <div className={s.paginado}>
+      
         <Pagination
         dogsPerPage={dogsPerPage}
         allDogs={allDogs.length}
         paginado={paginado}
         />
+       
         </div>
         </div>
     )

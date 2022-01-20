@@ -9,8 +9,7 @@
     height: auto;
     background: rgb(53, 53, 52);
     color:whitesmoke;
-   
-    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.3);
+     box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.3);
     -webkit-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.3);
     border-radius: 5px;
@@ -46,4 +45,26 @@ h5{
     -webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.3);
 
+}
+.remove{
+    position: relative;
+    border:none;
+    top: 8px;
+   left: 200px;     
+    width: 25px;
+    height: 25px;
+    background-color: transparent; 
+   border: none;
+   z-index: +2;
+   
+}
+
+.remove:hover{
+    cursor: pointer;
+   
+}
+
+.btn{
+    background-color: transparent;
+    border: none;
 }

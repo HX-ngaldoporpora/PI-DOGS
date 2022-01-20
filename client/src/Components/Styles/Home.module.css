@@ -56,6 +56,35 @@
     transform: scale(1.10);
     cursor: pointer;
 }
+
+.next{
+    width: 60px;
+    height:60px;
+    right: 20px;
+    top: 570px;
+    position:absolute;
+    z-index: +2;
+    filter: opacity(50%)
+}
+.next:hover{
+    transform: scale(1.20);
+    filter:opacity(75%)
+}
+
+.prev{
+    width: 60px;
+    height: 60px;
+    left: 250px;
+    top: 570px;
+    position:absolute;
+    z-index: +2;
+    filter: opacity(50%)
+}
+.prev:hover{
+    transform: scale(1.20);
+    filter:opacity(75%)
+}
+
 .container{
  display: grid;
  grid-template-columns: repeat(2, 1fr);

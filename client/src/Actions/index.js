@@ -13,6 +13,7 @@ export const CLEAR_DETAIL = "CLEAR_DETAIL"
 export const ADD_FAVORITE = "ADD_FAVORITE"
 export const REMOVE_FAVORITE = "REMOVE_FAVORITE"
 export const ORDER_SORT = "ORDER_SORT"
+export const DELETE = "DELETE"
 
 export function getAllDogs () {
     return async function (dispatch){
@@ -110,6 +111,20 @@ export function postDog (payload) {
             }
         } 
  } 
+ export function deleteDog (payload){
+    return async function (dispatch){
+        try{
+            const response = await axios.delete(`http://localhost:3001/dogs/${payload}`);
+            return {
+                type: DELETE,
+            }
+        }
+        catch(error){
+            console.log(error)
+        }
+    }
+}
+
 
  export function addFavorite (payload){
   return {

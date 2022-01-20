@@ -30,6 +30,7 @@ function Favorites() {
                     <div > {el.image?  <img className={s.imgfav} src= {el.image} alt ="woof"/> : <img src={barking} className={s.imgfav} alt="fav" />} </div>
                     <img className={s.like} src={like}  weight="30px" height="30px" alt="like"/>
                     <h4> A really lovely dog!</h4>
+                    
                     <button  className={s.btn} onClick = {() => handleDelete(el)}> <img src={remove} weight="25px" height="25px" alt="DELETE" /> </button> 
                     </div>
                     )

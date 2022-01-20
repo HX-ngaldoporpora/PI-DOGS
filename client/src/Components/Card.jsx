@@ -5,6 +5,9 @@ import barking from '../Components/Img/barking.jpg'
 import s from './Styles/Card.module.css'
 import {Link} from 'react-router-dom';
 
+
+
+
 function Card({name, image, id, max_weight, temperament, temperaments}) {
     
 function addPhoto (e) {
@@ -20,8 +23,8 @@ function addPhoto (e) {
              <p className={s.extras}> Can weight up to {max_weight} kgs. </p><br/>
              <p className={s.extras}> Temperaments: {temperament} {temperaments}</p> </Link> 
              
-             <div >
-            
+             <div >       
+
               <div className={s.favorite}>   
                     <FavoritesActions 
                      id = {id}
